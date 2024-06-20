@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class IntegerGuard
 {
-    public static function is($value): void
+    public static function is(mixed $value): void
     {
         if (!is_int($value)) {
             throw new InvalidArgumentException('Value is not an integer');
