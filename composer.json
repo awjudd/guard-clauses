@@ -1,0 +1,27 @@
+{
+    "name": "gaming-engine/guard-clauses",
+    "description": "A simple package with guard clause helpers.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JuddDev\\GuardClauses\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew Judd",
+            "email": "andrew@judd.dev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
