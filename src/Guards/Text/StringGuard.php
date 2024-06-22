@@ -40,4 +40,11 @@ class StringGuard
             throw new InvalidArgumentException("Value is not between $minimumLength and $maximumLength characters in length");
         }
     }
+
+    public static function shouldBe(string $value, string $expected): void
+    {
+        if ($value !== $expected) {
+            throw new InvalidArgumentException("Value '$value' does not equal the expected '$expected'");
+        }
+    }
 }
