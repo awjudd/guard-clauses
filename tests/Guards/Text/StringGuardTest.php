@@ -159,4 +159,32 @@ class StringGuardTest extends TestCase
         $this->fail();
     }
 
+    #[Test]
+    public function StringGuard_shouldBe_ProperlyIdentifiesStrings(): void
+    {
+        // Arrange
+        $value = 'test';
+        $expected = 'test';
+
+        // Act
+        StringGuard::shouldBe($value, $expected);
+
+        // Assert
+        $this->assertTrue(true);
+    }
+
+    #[Test]
+    public function StringGuard_shouldBe_ThrowsExceptionWhenStringsDoNotMatch(): void
+    {
+        // Arrange
+        $value = 'test';
+        $expected = 'test2';
+        $this->expectException(InvalidArgumentException::class);
+
+        // Act
+        StringGuard::shouldBe($value, $expected);
+
+        // Assert
+        $this->fail();
+    }
 }
