@@ -47,4 +47,39 @@ class IntegerGuard
             throw new InvalidArgumentException('Value is not zero');
         }
     }
+
+    public static function isGreaterThan(int $value, int $otherValue): void
+    {
+        if ($value <= $otherValue) {
+            throw new InvalidArgumentException('Value is not greater than the other value');
+        }
+    }
+
+    public static function isGreaterThanOrEquals(int $value, int $otherValue): void
+    {
+        if ($value < $otherValue) {
+            throw new InvalidArgumentException('Value is not greater than or equal to the other value');
+        }
+    }
+
+    public static function isLessThan(int $value, int $otherValue): void
+    {
+        if ($value >= $otherValue) {
+            throw new InvalidArgumentException('Value is not less than the other value');
+        }
+    }
+
+    public static function isLessThanOrEquals(int $value, int $otherValue): void
+    {
+        if ($value > $otherValue) {
+            throw new InvalidArgumentException('Value is not less than or equal to the other value');
+        }
+    }
+
+    public static function isBetween(int $value, int $lowerBound, int $upperBound): void
+    {
+        if ($value < $lowerBound || $value > $upperBound) {
+            throw new InvalidArgumentException('Value is not between the lower and upper bounds');
+        }
+    }
 }
