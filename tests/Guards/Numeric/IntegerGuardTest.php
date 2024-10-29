@@ -226,5 +226,4 @@ class IntegerGuardTest extends TestCase
         // Assert
         $this->fail();
     }
-
 }
