@@ -187,4 +187,92 @@ class StringGuardTest extends TestCase
         // Assert
         $this->fail();
     }
+
+    #[Test]
+    public function StringGuard_startsWith_ProperlyFindsThePrefix(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = 'te';
+
+        // Act
+        StringGuard::startsWith($value, $prefix);
+
+        // Assert
+        $this->assertTrue(true);
+    }
+
+    #[Test]
+    public function StringGuard_startsWith_ThrowsExceptionIfThePrefixIsEmpty(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = '';
+        $this->expectException(InvalidArgumentException::class);
+
+        // Act
+        StringGuard::startsWith($value, $prefix);
+
+        // Assert
+        $this->fail();
+    }
+
+    #[Test]
+    public function StringGuard_startsWith_ThrowsExceptionIfThePrefixDoesNotExist(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = 'test2';
+        $this->expectException(InvalidArgumentException::class);
+
+        // Act
+        StringGuard::startsWith($value, $prefix);
+
+        // Assert
+        $this->fail();
+    }
+
+    #[Test]
+    public function StringGuard_endsWith_ProperlyFindsTheSuffix(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = 'st';
+
+        // Act
+        StringGuard::endsWith($value, $prefix);
+
+        // Assert
+        $this->assertTrue(true);
+    }
+
+    #[Test]
+    public function StringGuard_endsWith_ThrowsExceptionIfThePrefixIsEmpty(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = '';
+        $this->expectException(InvalidArgumentException::class);
+
+        // Act
+        StringGuard::endsWith($value, $prefix);
+
+        // Assert
+        $this->fail();
+    }
+
+    #[Test]
+    public function StringGuard_endsWith_ThrowsExceptionIfThePrefixDoesNotExist(): void
+    {
+        // Arrange
+        $value = 'test';
+        $prefix = 'test2';
+        $this->expectException(InvalidArgumentException::class);
+
+        // Act
+        StringGuard::endsWith($value, $prefix);
+
+        // Assert
+        $this->fail();
+    }
 }
