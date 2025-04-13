@@ -47,4 +47,27 @@ class StringGuard
             throw new InvalidArgumentException("Value '$value' does not equal the expected '$expected'");
         }
     }
+
+    public static function startsWith(string $value, string $prefix): void
+    {
+        if (empty($prefix)) {
+            throw new InvalidArgumentException('The prefix should not be empty.');
+        }
+
+        if (!str_starts_with($value, $prefix)) {
+            throw new InvalidArgumentException("Value '$value' does not start with '$prefix'");
+        }
+    }
+
+    public static function endsWith(string $value, string $suffix): void
+    {
+        if (empty($suffix)) {
+            throw new InvalidArgumentException('The suffix should not be empty.');
+        }
+
+
+        if (!str_ends_with($value, $suffix)) {
+            throw new InvalidArgumentException("Value '$value' does not end with '$suffix'");
+        }
+    }
 }
